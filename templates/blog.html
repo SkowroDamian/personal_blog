@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %} <title>Blog</title>{% endblock %}
+{% block content %} 
+<div class="posts-container">
+    {% for post in posts %}
+    <div class="post">
+        <h1>{{ post.title }} </h1>
+        <p>{{ post.date_added }}  READING TIME</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
