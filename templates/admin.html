@@ -2,9 +2,19 @@
 {% block title %} <title>Admin panel</title> {% endblock %}
 {% block content %} 
 <div class="content">
-    <h1 class="title">
-        Welcome {{ name }} 
-    </h1>
-</div>
+    <div class="sidebar has-background-primary has-text-white-bis">
+        <ul>
+            <li><a href="{{url_for('add')}}">add post</a></li>
+            <li><a href="#">edit posts</a></li>
+            <li><a href="#">edit users</a></li>
+            <li><a href="#">account</a></li>
+          </ul>
+    </div>
+    <div class="edit-menu">
+        <h1 class="title">
+            {% block admin_menu %} {% endblock %}
+        </h1>
+    </div>
 
+</div>
 {% endblock %}

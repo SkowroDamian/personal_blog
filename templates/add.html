@@ -1,12 +1,29 @@
-{% extends 'base.html' %}
+{% extends 'admin.html' %}
 {% block title %} <title>add post</title>{% endblock %}
-{% block content %} 
-<form method="post">
-    <label for="title">Title:</label>
-    <input type="text" id="title" name="title" required>
+{% block admin_menu %}
+<div class="box">
+    <h5 class="title">Create post</h1>
+    <form method="post">
+        <div class="field">
+            <label class="label">Title</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div class="field ">
+            <label class="label">Content:</label>
+            <textarea class="textarea" name="content" id="" cols="30" rows="10" required></textarea>
+        </div>
+        <div class="control">
+            <button class="button is-link">Submit</button>
+          </div>
+        
+        <!-- <label for="content">Content:</label>
+        <textarea name="content" id="content" cols="30" rows="10" required></textarea> -->
+        <!-- <input type="submit" value="Create post"> -->
+    </form>
     
-    <label for="content">Content:</label>
-    <textarea name="content" id="content" cols="30" rows="10" required></textarea>
-    <input type="submit" value="Create post">
-</form>
+</div>
+
 {% endblock %}
+
+
+

@@ -44,6 +44,7 @@ def home():
     return render_template('blog.html', posts=posts)
 
 @app.route('/add', methods=['Get', 'POST'])
+@login_required
 def add():
     if request.method == 'POST':
         title = request.form['title']
@@ -54,6 +55,11 @@ def add():
         db.session.commit()
         return redirect(url_for('add'))
     return render_template('add.html')
+
+# @app.route('/edit')
+# # @login_required
+# # def edit():
+    
 
 ### authorization
 @app.route('/admin')
@@ -74,8 +80,6 @@ def login_post():
     if not user or not check_password_hash(user.password, password):
         
         flash("Check your credentials")
-        
-        
         return redirect(url_for('login'))
     #login code 
     # app.logger.debug('account valid') # 
