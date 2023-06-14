@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     {% block title %} {% endblock %} 
 </head>
 <body>
     <nav>
         <li><a href="#">Logo</a></li>
-        <li><a href="/">Blog</a></li>
+        <li><a href="{{ url_for('home')}}">Blog</a></li>
         <li><a href="#">Projects</a></li>
         <li><a href="#">Contact</a></li>
         <li><a href="#">About</a></li>
+        {% if not current_user.is_authenticated %}
+        <li><a href="{{ url_for('login')}}">Login</a></li>
+        {% endif %}
+        {% if current_user.is_authenticated %}
+        <li><a href="{{ url_for('admin')}}">Admin</a></li>
+        {% endif %}
+        {% if current_user.is_authenticated %}
+        <li><a href="{{ url_for('logout')}}">Logout</a></li>
+        {% endif %}
     </nav>
     {% block content %} {% endblock %} 
 </body>

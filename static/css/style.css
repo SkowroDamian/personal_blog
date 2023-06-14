@@ -1,20 +1,30 @@
 :root {
-    --bg-primary: #E8F1F2;
+  --color-blue: #1B98E0;
+    /* --bg-primary: #E8F1F2;
     --bg-secondary: #1B98E0;
     --color-secondary: #247BA0;
     --color-third: #006494;
-    --color-forth: #13293D;
+    --color-forth: #13293D; */
 }
 
-body {
-    margin: 0;
-    background-color: var(--bg-primary);
+/* body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+} */
+
+.content {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 nav {
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
-    background-color: var(--bg-secondary);
+    background-color: var(--color-blue);
 }
 
 nav li:first-child {
@@ -62,3 +72,7 @@ nav li {
       border-bottom: none;
     }
   }  
+
+  .box .title {
+    text-align: center;
+  }
